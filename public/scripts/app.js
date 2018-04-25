@@ -56,7 +56,12 @@ $(document).ready(function() {
   function calcTime(inputTime) {
     let datenow = Date.now() - inputTime;
     let dayDiff = parseInt(datenow/1000/60/60/24);
-    return dayDiff;
+    if (dayDiff > 1) {
+      return dayDiff + " days ago";
+    }
+    else {
+      return dayDiff + " day ago";
+    }
   };
 
   function createTweetElement(tweetData) {
@@ -65,7 +70,7 @@ $(document).ready(function() {
     const $tweetText = $("<p class ='tweet-text'>" + tweetData.content.text + "</p>");
     const icons = "<i class='fas fa-flag'></i><i class='fas fa-retweet'></i><i class='fas fa-heart'></i>";
     const tweetTime = calcTime(tweetData.created_at);
-    const $footer = $("<footer><span class ='time'>" + tweetTime + " day(s) ago" + "</span><span class = 'tweeter-icons'>"+ icons +"</span> </footer>");
+    const $footer = $("<footer><span class ='time'>" + tweetTime + "</span><span class = 'tweeter-icons'>"+ icons +"</span> </footer>");
     $($header).append("<h3 class = 'full-name'>" + tweetData.user.name + "</h3> <span class = 'handle'>" + tweetData.user.handle + "</span>")
     $($header).append("<img src =" + tweetData.user.avatars.regular + ">")
     $($tweetHTML).append($header)
@@ -81,6 +86,5 @@ $(document).ready(function() {
     });
   };
 
-renderTweets(data);
-
+  renderTweets(data);
 });
