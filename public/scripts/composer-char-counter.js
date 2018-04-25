@@ -1,5 +1,5 @@
 $(function() {
-  $(".new-tweet textarea").on("keyup keydown", function(){
+  $(".new-tweet textarea").on("input", function(){
     const $ogNum = $(".new-tweet .counter").contents();
     let countNum  = 140 - $(this).val().length;
     $ogNum.replaceWith(countNum);

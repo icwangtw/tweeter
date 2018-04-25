@@ -10,9 +10,7 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
+/* Global layout */
 
 body {
   margin: 0;
@@ -27,6 +25,71 @@ main {
   margin: 80px auto 0;
   padding: 10px 0;
 }
+
+/* Tweet display */
+article {
+  background-color: #eee;
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin: 1em 2em ;
+  overflow: hidden;
+  opacity: .5
+}
+
+/* User information display */
+article .handle {
+  float: right;
+  margin: 1em;
+  line-height: 3.5em;
+}
+
+article .full-name {
+  padding: 14px 0;
+  display: inline-block;
+}
+
+article img{
+  border-radius: 5px;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  float: left;
+  margin: 1em;
+  opacity: .8;
+}
+
+/* The tweet itself */
+article .tweet-text {
+  background-color: #fff;
+  width: 100%;
+  padding: 1em;
+  margin: 0;
+}
+
+/* Footer stuff */
+footer {
+  border-top: 1px solid grey;
+  font-size: 0.8em;
+  background-color: #fff;
+  padding: 1em;
+}
+
+.tweeter-icons {
+  color: teal;
+  float: right;
+  letter-spacing: .5em;
+  visibility: hidden;
+}
+
+/* Action when hovered */
+article:hover {
+  opacity: 1;
+}
+
+article:hover .tweeter-icons {
+  visibility: visible;
+}
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
