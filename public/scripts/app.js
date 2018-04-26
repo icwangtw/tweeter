@@ -5,7 +5,8 @@
  */
 
 $(document).ready(function() {
-  let $submission = $('#tweet-submit')
+  function newTweets () {
+  let $submission = $("#tweet-submit")
     .on('submit', function(event) {
     event.preventDefault()
     if ($submission.serialize().length < 6) {
@@ -16,25 +17,26 @@ $(document).ready(function() {
       return;
     }
     $.ajax({
-      url: '/tweets',
-      method: 'POST',
+      url:"/tweets",
+      method: "POST",
       data: $submission.serialize(),
       success: function() {
         loadTweets()
         $submission[0].reset()
-      }
+        }
+      });
     });
-  });
+  };
 
   function loadTweets () {
     $.ajax({
-      url: '/tweets',
-      method: 'GET',
+      url: "/tweets",
+      method: "GET",
       success: function(data) {
         renderTweets(data.reverse());
       }
     });
-  }
+  };
 
   function calcTime(inputTime) {
     let datenow = Date.now() - inputTime;
@@ -68,5 +70,14 @@ $(document).ready(function() {
     });
   };
 
+  $("#compose").on("click", function(){
+    if ($(".new-tweet").is(":visible")) {
+      $(".new-tweet").slideUp(100)
+    } else {
+      $(".new-tweet").slideDown(100), $(".new-tweet textarea").focus()
+    }
+  });
+
+  newTweets()
   loadTweets();
 });

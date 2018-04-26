@@ -16,9 +16,30 @@ nav {
 }
 
 #nav-bar .header {
-  font-size: 2em;
-  line-height: 2.5;
+  font-size: 2.5em;
+  line-height: 2;
   padding: 0 0 0 10px;
   float: left;
 }
 
+#compose {
+  font-size: 1.2em;
+  line-height: 2;
+  margin:  10px 30px 10px 0;
+  padding: 10px 15px;
+  float:right;
+  color: #00a087;
+  background-color: #e8fdff;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
+#compose i {
+  margin: 0 5px 0 0;
+}
+
+#compose:hover {
+  color:#000;
+  background-color: #fff;
+  border: 1px solid black;
+}
