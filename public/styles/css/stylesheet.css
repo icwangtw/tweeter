@@ -1,0 +1,116 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/* Global layout */
+main {
+  width: 450px;
+  background-color: #fff;
+  margin: 80px auto 0;
+  padding: 10px 0; }
+
+article {
+  background-color: #eee;
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin: 1em 2em;
+  overflow: hidden;
+  opacity: .5; }
+  article .handle {
+    float: right;
+    margin: 1em;
+    line-height: 3.5em; }
+  article .full-name {
+    padding: 14px 0;
+    display: inline-block; }
+  article img {
+    border-radius: 5px;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    float: left;
+    margin: 1em;
+    opacity: .8; }
+  article .tweeter-icons {
+    color: teal;
+    float: right;
+    letter-spacing: 1em;
+    visibility: hidden; }
+  article .tweet-text {
+    background-color: #fff;
+    width: 100%;
+    padding: 1em;
+    margin: 0; }
+  article :hover {
+    opacity: 1; }
+    article :hover .tweeter-icons {
+      visibility: visible; }
+
+footer {
+  border-top: 1px solid grey;
+  font-size: 0.8em;
+  background-color: #fff;
+  padding: 1em; }
+
+.new-tweet {
+  background-color: #eee;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 1em 1em;
+  margin: 1em 2em; }
+  .new-tweet h2 {
+    margin: 0 0;
+    border-bottom: 2px solid black; }
+  .new-tweet textarea {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 10px 0;
+    resize: vertical; }
+
+.counter {
+  float: right;
+  margin: 2px 0;
+  font-style: italic; }
+
+#navbar {
+  position: fixed;
+  top: 0;
+  background-color: #00a087;
+  color: #e8fdff;
+  width: 100%;
+  height: 80px;
+  padding: 0 2em 0;
+  z-index: 2; }
+  #navbar .logo {
+    height: 80px;
+    width: 80px;
+    float: left; }
+  #navbar .header {
+    font-size: 2.5em;
+    line-height: 2;
+    padding: 0 0 0 10px;
+    float: left; }
+
+#compose {
+  font-size: 1.2em;
+  line-height: 2;
+  margin: 10px 30px 10px 0;
+  padding: 10px 15px;
+  float: right;
+  color: #00a087;
+  background-color: #e8fdff;
+  border: 1px solid grey;
+  border-radius: 10px; }
+  #compose i {
+    margin: 0 5px 0 0; }
+  #compose :hover {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid black; }

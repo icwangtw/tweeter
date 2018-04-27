@@ -1,0 +1,84 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+/* Global layout */
+
+
+
+main {
+  width: 450px;
+  background-color: $white;
+  margin: 80px auto 0;
+  padding: 10px 0;
+}
+
+article {
+  background-color: $grey;
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin: 1em 2em ;
+  overflow: hidden;
+  opacity: .5;
+
+  .handle {
+  float: right;
+  margin: 1em;
+  line-height: 3.5em;
+  }
+
+  .full-name {
+  padding: 14px 0;
+  display: inline-block;
+  }
+
+  img{
+  border-radius: 5px;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  float: left;
+  margin: 1em;
+  opacity: .8;
+  }
+
+  .tweeter-icons {
+  color: teal;
+  float: right;
+  letter-spacing: 1em;
+  visibility: hidden;
+  }
+
+  .tweet-text {
+  background-color: $white;
+  width: 100%;
+  padding: 1em;
+  margin: 0;
+  }
+
+  :hover {
+  opacity: 1;
+
+    .tweeter-icons {
+    visibility: visible;
+    }
+
+  }
+
+}
+
+footer {
+  border-top: 1px solid grey;
+  font-size: 0.8em;
+  background-color: $white;
+  padding: 1em;
+}
