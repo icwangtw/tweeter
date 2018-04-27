@@ -9,10 +9,10 @@ $(document).ready(function() {
   let $submission = $("#tweet-submit")
     .on('submit', function(event) {
     event.preventDefault();
-    if ($submission.serialize().length < 6) {
+    if ($("textarea").val().length < 0) {
       alert("No input message!");
       return;
-    } else if ($submission.serialize().length > 145) {
+    } else if ($("textarea").val().length > 140) {
       alert("Message length exceeded 140 characters!");
       return;
     }
