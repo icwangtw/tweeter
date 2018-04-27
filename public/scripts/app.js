@@ -38,6 +38,7 @@ $(document).ready(function() {
     });
   }
 
+//function to calculate and translate unix time difference
   function calcTime(inputTime) {
     let datenow = Date.now() - inputTime;
     let dayDiff = parseInt(datenow/1000/60/60/24);
@@ -70,6 +71,7 @@ $(document).ready(function() {
     });
   }
 
+//jQuery to hide on show new tweet field with the compose button
   $("#compose").on("click", function(){
     if ($(".new-tweet").is(":visible")) {
       $(".new-tweet").slideUp(100);
