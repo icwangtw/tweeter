@@ -15,3 +15,7 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+!["Screenshot of the app"](https://github.com/icwangtw/tweeter/blob/master/docs/Tweeter-Full.png)
+!["The app in action"](https://github.com/icwangtw/tweeter/blob/master/docs/Demo.webm)
