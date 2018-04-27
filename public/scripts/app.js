@@ -8,7 +8,7 @@ $(document).ready(function() {
   function newTweets () {
   let $submission = $("#tweet-submit")
     .on('submit', function(event) {
-    event.preventDefault()
+    event.preventDefault();
     if ($submission.serialize().length < 6) {
       alert("No input message!");
       return;
@@ -21,12 +21,12 @@ $(document).ready(function() {
       method: "POST",
       data: $submission.serialize(),
       success: function() {
-        loadTweets()
-        $submission[0].reset()
+        loadTweets();
+        $submission[0].reset();
         }
       });
     });
-  };
+  }
 
   function loadTweets () {
     $.ajax({
@@ -36,7 +36,7 @@ $(document).ready(function() {
         renderTweets(data.reverse());
       }
     });
-  };
+  }
 
   function calcTime(inputTime) {
     let datenow = Date.now() - inputTime;
@@ -47,7 +47,7 @@ $(document).ready(function() {
     else {
       return dayDiff + " day ago";
     }
-  };
+  }
 
   function createTweetElement(tweetData) {
     const $tweetHTML = $("<article></article");
@@ -56,11 +56,11 @@ $(document).ready(function() {
     const icons = "<i class='fas fa-flag'></i><i class='fas fa-retweet'></i><i class='fas fa-heart'></i>";
     const tweetTime = calcTime(tweetData.created_at);
     const $footer = $("<footer><span class ='time'>" + tweetTime + "</span><span class = 'tweeter-icons'>"+ icons +"</span> </footer>");
-    $($header).append("<h3 class = 'full-name'>" + tweetData.user.name + "</h3> <span class = 'handle'>" + tweetData.user.handle + "</span>")
-    $($header).append("<img src =" + tweetData.user.avatars.regular + ">")
-    $($tweetHTML).append($header, $tweetText, $footer)
-    return $tweetHTML
-  };
+    $($header).append("<h3 class = 'full-name'>" + tweetData.user.name + "</h3> <span class = 'handle'>" + tweetData.user.handle + "</span>");
+    $($header).append("<img src =" + tweetData.user.avatars.regular + ">");
+    $($tweetHTML).append($header, $tweetText, $footer);
+    return $tweetHTML;
+  }
 
   function renderTweets(tweets) {
     $("section.all-tweets").empty();
@@ -68,16 +68,16 @@ $(document).ready(function() {
       var $tweet = createTweetElement(eachTweet);
       $("section.all-tweets").append($tweet);
     });
-  };
+  }
 
   $("#compose").on("click", function(){
     if ($(".new-tweet").is(":visible")) {
-      $(".new-tweet").slideUp(100)
+      $(".new-tweet").slideUp(100);
     } else {
-      $(".new-tweet").slideDown(100), $(".new-tweet textarea").focus()
+      $(".new-tweet").slideDown(100), $(".new-tweet textarea").focus();
     }
   });
 
-  newTweets()
+  newTweets();
   loadTweets();
 });
