@@ -17,5 +17,7 @@ This repository is the starter code for the project: Students will fork and clon
 - Node 5.10.x or above
 
 ## Screenshots
+##### Main page
 !["Screenshot of the app"](https://github.com/icwangtw/tweeter/blob/master/docs/Tweeter-Full.png)
+##### Demo of composing a tweet
 !["The app in action"](https://github.com/icwangtw/tweeter/blob/master/docs/Demo.gif)
